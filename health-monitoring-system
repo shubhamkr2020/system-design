@@ -2,4 +2,7 @@ source: https://medium.com/@ajingnv/system-design-a-server-health-monitoring-sys
 
 Notes:
 
-1. 
+1. Time series dataset should be used, it helps in analysis as well.
+2. Time series databases - Amazon timestream, prometheus, etc.
+3. talk about push and pull mechanisms and select the better one with reasons.
+4. 
