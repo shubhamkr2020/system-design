@@ -4,5 +4,16 @@ Notes:
 
 1. Time series dataset should be used, it helps in analysis as well.
 2. Time series databases - Amazon timestream, prometheus, etc.
-3. talk about push and pull mechanisms and select the better one with reasons.
-4. 
+3. Talk about push and pull mechanisms whenever possible and select the better one with reasons.
+
+4. Use batch processing when there are a lot of API/RPC calls on the servers.
+  Collect the data and call the server only once (if possible) with the batch of the data as input.
+
+5. When there is a lot of data to be processed at once, use stream data processing and message queue in between.
+  Use a queue to store the stream of data as input and then use streaming to process the queue data efficiently.
+
+Final Design:
+
+https://miro.medium.com/v2/resize:fit:4800/format:webp/1*RY1jt3akoLUvlCS4i7t-8g.png
+
+
