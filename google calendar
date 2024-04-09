@@ -61,7 +61,9 @@ Source:
   1. CDNs for loading the calendar for users.
   2. Analytical Dbs can be used for dumps and then analysis over the previous data to send notifications and anlyse the meeting types aggragation for year or month.
   3. cron jobs/batch jobs for generating the events for sending it through event service.
-  4. 
+  4. load balancers algorithms if possible
+  5. DB schemas
+  6. partitioning keys, secondary indices.
   
 
 
