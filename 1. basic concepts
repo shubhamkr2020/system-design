@@ -23,12 +23,14 @@ Source: https://www.youtube.com/watch?v=lX4CrbXMsNQ&list=PLCRMIe5FDPsd0gVs500xeO
   e. monitoring and logging and analytics
   f. caching
 
-4. Proxy and reverse proxy
-  proxy - between servers and internet as called as proxy servers
-  reverse proxy - between clients and internet can also be called as proxy clients
-
+4. Proxy, reverse proxy, load balancer, api gateway: - used for managing traffic efficiently
+  proxy - between clients and internet, can also be called as client proxy servers.
+  reverse proxy - between servers and internet, can also be called as server proxy servers.
+  load balancer - to redirect the load to healthy servers to serve the requests, could be dynamic or static algo and addition of the servers.
+  api gateway - single point of entry for functionalities mentioned in point 3.
+ 
 5. ways to improve the API performance:
-  a. Caching
+  a. Caching - do not reach out to databases all the time, cache frequently used data if possible.
   b. Connection Pool - create only one connection and serve any request before it is closed
   c. avoid n+1 problem - query database only once for n request ids
   d. pagination - if response is too large paginate it
@@ -53,3 +55,10 @@ Source: https://www.youtube.com/watch?v=lX4CrbXMsNQ&list=PLCRMIe5FDPsd0gVs500xeO
   f. pubsub - used to decouple the systems with heavy requests
   g. sharding - partition the db if possible
 
+8. short polling, long polling, webhooks, websockets - 
+  short - ping periodically and ask for the updates, high server utilization.
+  long - ping once and when the update is ready response back, connection opened for a long time.
+  webhooks - give the way to revert back the update info when it is done, usually secured, and backed with polling
+  websockets - constant bidireectional connection for real time bidirectional updates.
+
+9. 
