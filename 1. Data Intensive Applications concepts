@@ -3,6 +3,7 @@ Concepts from the book Data Intensive applications: https://drive.google.com/fil
 Chapter 1: Reliability, Scalability, Maintainability
 
 1. What is Reliability, Scalability, Maintainability
+2. the 99th percentile latency is called the tail latency.
 
 
 
@@ -24,44 +25,98 @@ Chapter 3: Storage and Retrieval
 Chapter 4: Encoding and Evolution
 
 1. Encoding and why is it needed.
-  a .Since in-memory data strucutres are optimised for access in the applications mostly using pointers of the address spaces,
-  They cannot be used to transfer the data over network. So we need encoding or serialisation to transfer the data using byte sequences.
+    a .Since in-memory data strucutres are optimised for access in the applications mostly using pointers of the address spaces,
+    They cannot be used to transfer the data over network. So we need encoding or serialisation to transfer the data using byte sequences.
 2. protocoll buffers and thrift encoding
 3. data flow between processes:
-  a. via databases - update the database using encoding and then fetch from the other process by decoding it.
-  b. via service calls - direct RPCs to a process of a service, encode/decode the requests and responses before sending.
-  c. via asynchronous message passing - kafka queue as a middle ware. encoded by the senders and decoded by the receivers over a topic (multiple senders and recievers).
+    a. via databases - update the database using encoding and then fetch from the other process by decoding it.
+    b. via service calls - direct RPCs to a process of a service, encode/decode the requests and responses before sending.
+    c. via asynchronous message passing - kafka queue as a middle ware. encoded by the senders and decoded by the receivers over a topic (multiple senders and recievers).
 4. 
 
 
 Chapter 5: Replication
 
 1. Single Leader -
-  a. all writes to single node and reads from multiple nodes synced to the leader.
-  b. synchronous and asynchronous followers, usually single sync and rest async
-  c. async followers are eventually consistent
-  d. failover - when leader is down, make a follower the leader and proceed forward, mostly done manually due to many issues.
+    a. all writes to single node and reads from multiple nodes synced to the leader.
+    b. synchronous and asynchronous followers, usually single sync and rest async
+    c. async followers are eventually consistent
+    d. failover - when leader is down, make a follower the leader and proceed forward, mostly done manually due to many issues.
 
 2. Multi Leader - 
-  a. writes to multiple leaders and sync to others and read from anyone.
-  b. mostly not used, very complex and not that benfecial.
-  c. topologies of the multi leader replications
+    a. writes to multiple leaders and sync to others and read from anyone.
+    b. mostly not used, very complex and not that benfecial.
+    c. topologies of the multi leader replications
 
 3. Leaderless - 
-  a. widely used these days, dynamo stlye (amazon internal db) but not dynamo db (it is single leader)
-  b. multiple node writes and multiple node reads.
-  c. directly update to multiple replicas or keep a cordinator (not leader) to do the updates on multiple replicas.
-  d. no failovers in leaderless since there is no leader.
-  e. Quorums for read and write - usually configurable n, w, r values in the leaderless DBs.
+    a. widely used these days, dynamo stlye (amazon internal db) but not dynamo db (it is single leader)
+    b. multiple node writes and multiple node reads.
+    c. directly update to multiple replicas or keep a cordinator (not leader) to do the updates on multiple replicas.
+    d. no failovers in leaderless since there is no leader.
+    e. Quorums for read and write - usually configurable n, w, r values in the leaderless DBs.
 
 
 
 Chapter 6: Partition
 
-1. partition using hash of keys
-  loose the key range query efficiency since it will now be sent many nodes instead of one but the load at one is decreased in general.
-2. consistent hashing - evenly distribute the load
-  a. 
+1. partition using the sorted keys - 
+    a. faster range queries but more potential hot spots.
+2. partition using hash of keys - 
+    a. loose the key range query efficiency since it will now be sent many nodes instead of one but the load at one is decreased in general.
+    b. hybrid indexes are used, one part for partition and other part for sort order.
+3. consistent hashing - 
+    a. evenly distribute the load
+    b. for hot spots, use application logics like add 2 digits infront of its id and divide it into multiple partitions
+        doing so will make the read costly since there are writes on many partitions, go to every partitions to read the complete data.
+    c. querying a multiple partitioned write data is called as scatter gather. they make read more expensive.
+3. secondary index partitions:
+    a. local indexes: secondary indexes are stored in the same partition as the primary key and value. Also called document partitioned indexes.
+        only one partition needs to be queried.
+    b. global indexes: secondary indexes are partitioned separately. 
+        write on multiple partitions but read from one partition.
 
+
+
+Chapter 7: Transactions
+
+1. ACID properties - Atomicity, Consistency, Isolation, Durability
+    a. Atomic means cannot be divided further
+    b. Consistent in database transactions means database is in a good/valid state.
+        Database rely on other properties like atomicity and isolation and durability to be consistent so C does not really belong to ACID
+    c. Isolation or serializability means two concurrently executing transacitons are isolated from each other.
+    d. Durability is a promise that once transaction is committed then it will stay forever.
+2. Different Isolation levels.
+    a. Read committed - no dirty reads and no dirty writes.
+    b. Snapshot Isolation - Repeatable read (removes non repeatable reads or read skew)
+    c. Serializable Isolation - simplest way to remove concurrency problems is remove the concurrency.
+    
+
+Chapter 10: Batch Processing
+
+1. Services (online systems) - 
+    Response time is mostly the primary measure of performance.
+2. Batch Processing (offline systems) - 
+    consumes large input and produces output, throughput is the measure of a batch job used to process huge inputs mostly periodically.
+3. Stream Processing (near real time system) - 
+    consumes events and produces output with lower latency than a batch job. 
+4. MapReduce
+    Mapper - It is used to transform the data into a form suitable for sorting 
+        so that it can be partitioned and sent to different paritions for execution.
+    Reducer - It is used to process the sorted data efficiently.
+5. Distributed execution of map reduce.
+
+
+
+Chapter 11: Stream Processing
+
+1. The idea of stream processing is to do batch processing by removing the periodic time and simply processing it as the event happens.
+2. Events are produced by producers and consumed by consumers.
+3. Related events are grouped together in a topic or a stream.
+4. Messaging system (usually message brokers/queues) is used to inform consumers that a new event is generated.
+5. If producers are producing very fast then there are 3 ways to handle it:
+    a. drop the messages
+    b. buffer it
+    c. back pressure - block producer from sending more messages.
+6. Amazon Kinesis Streams, Apache Kafka, Google Cloud PubSub are examples of message queues/brokers.
 
 
