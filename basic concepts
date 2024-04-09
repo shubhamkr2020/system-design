@@ -1,0 +1,55 @@
+Source: https://www.youtube.com/watch?v=lX4CrbXMsNQ&list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf&index=1
+
+
+1. CAP Theorem:
+  Consistency, Availability and Parition Tolerance - 
+  If partition in the network happend either consistency or availability can be maintained
+
+2. Load Balancer Alogirthms:
+  a. Static - need not check/ping the servers
+    Round Robin
+    Sticky Round Robin
+    Weighted Round Robin
+    Hash
+  b. Dynamic - need to ping the servers
+    Least Connections
+    Least Time
+
+3. API Gateway:
+  a. between clients and servers
+  b. authentication and security <=> Identity Provider
+  c. load balancing and service discovery
+  d. rate limiting
+  e. monitoring and logging and analytics
+  f. caching
+
+4. Proxy and reverse proxy
+  proxy - between servers and internet as called as proxy servers
+  reverse proxy - between clients and internet can also be called as proxy clients
+
+5. ways to improve the API performance:
+  a. Caching
+  b. Connection Pool - create only one connection and serve any request before it is closed
+  c. avoid n+1 problem - query database only once for n request ids
+  d. pagination - if response is too large paginate it
+  e. json serializers - use fast serialization libraries
+  f. payload compression - compress the requests and response if possible
+  g. asychronous logging - in high throuhgput systems either avoid loggings for sometime in between or write the logs asynchronously. 
+
+6. 6 API architecture designs:
+  a. SOAP - XML based, used in financial/payment systems where security/reliability is requires, complex in general
+  b. REST - restful state trasnfer, widely used in internet (backbone), like youtube, google, netflix, etc
+  c. GraphQL - ask for exactly what you need, flexibilty and steep learning curve
+  d. gRPC - favorite for microservices
+  e. WebSocket - bi direcitonal realtime low latency, for chats, video chats, gaming, etc
+  f. WebHook - event driven, slack, discord, stripe payments platform, etc, also sends a webhook event in the request like callback.
+
+7. 7 Distributed systems patterns:
+  a. Ambassador - create an assistance if needed
+  b. Circuit breaker - in case of failures, break the circuit and fix it before proceeding further, netflix hystics
+  c. command and query separation - separate the write and read databases and handle/scale it separately - mostly used in read heavy systems
+  d. Event sourcing - github events, less knowledge
+  e. leader election - to handle a write on db and read from multple dbs in general.
+  f. pubsub - used to decouple the systems with heavy requests
+  g. sharding - partition the db if possible
+
