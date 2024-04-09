@@ -1,0 +1,58 @@
+1. Functional requirements:
+
+  1. setup meetings
+  2. view calendar for yourself and for others
+  3. meeting reminders
+  4. availability for the user
+  5. etc...
+
+2. Non functional requirements:
+
+  1. high avialbility
+  2. reliability/durability
+  3. consistency - eventual not stronger
+  4. low latency
+
+
+3. back of the envelope estimations:
+
+  no of total users - 100M
+  10M users scheduling meetings per day  - DAU  = 10M;
+  
+  QPS = 10M/24/3600 = 10^7/100000 = 100 queries
+  
+  1 meeting request = 10KB;
+  100 requests => 1MB/sec;
+  
+  total storage for 1 year = 365 * 24 * 3600 * 1MB = 400 * 100000 * 1MB = 40*10^6MB = 40TB storage per year.
+
+
+4. User Journey:
+
+  1. clients go to the calendar UI, puts a request for view calendar and availability of others as well as themself
+  2. check the calendar timings for meetings and puts a request for blocking the time with request parameters as other people names and timing.
+  3. request is received by the calendar servers and blocks the time accordingly handling the conflicts and all.
+  4. send an acceptance for other users and mail notifications.
+  5. client and others view their calendar as blocked time in the next view request call.
+
+
+5. Services:
+
+  1. Meeting Service
+      a. getMeeting, createMeeting, updateMeeting, deleteMeeting
+      b. getAvailability, getCalendar
+  2. Notification Service
+      a. notify(), notifyAll(), 
+      b. sendReminder()
+  3. UserService
+      a. getUser, addUser, deleteUser, updateUser
+
+6. Database schema:
+  1. Tables:
+    a. User - userid, username, other metadata....
+    b. meetings - meetingId, attendees, from, to, committedAt, name, description
+    c. notification - notificaitonId, userIds, meetingId, medium, timeToNotify
+  
+
+
+
