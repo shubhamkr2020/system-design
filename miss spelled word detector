@@ -1,6 +1,6 @@
 Identify misspelled words and provide suggestions for correct words.
 
-Use fuzzy logic and some string difference algorithms like
+Use fuzzy logic (https://nanonets.com/blog/fuzzy-matching-fuzzy-logic/) and some string difference algorithms like
 edit distance
 cos theta comparison
 some other distance like length 
