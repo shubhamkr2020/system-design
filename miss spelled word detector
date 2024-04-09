@@ -1,1 +1,7 @@
+Identify misspelled words and provide suggestions for correct words.
 
+Use fuzzy logic and some string difference algorithms like
+edit distance
+cos theta comparison
+some other distance like length 
+assign each distance some  weight and find the similarity index and then use the similarity index to find or suggest the closest words if not the correct word.
