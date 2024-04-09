@@ -54,6 +54,10 @@ Source: https://www.geeksforgeeks.org/system-design-design-google-calendar/
     a. User - userid, username, other metadata....
     b. meetings - meetingId, attendees, from, to, committedAt, name, description
     c. notification - notificaitonId, userIds, meetingId, medium, timeToNotify
+
+7. checklist:
+  1. CDNs for loading the calendar for users.
+  2. 
   
 
 
