@@ -1,5 +1,6 @@
-Source: https://www.youtube.com/watch?v=lX4CrbXMsNQ&list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf&index=1
-
+Sources: 
+1. byte byte go - https://www.youtube.com/watch?v=lX4CrbXMsNQ&list=PLCRMIe5FDPsd0gVs500xeOewfySTsmEjf&index=1
+2. system design primer - https://github.com/donnemartin/system-design-primer/blob/master/README.md
 
 1. CAP Theorem:
   Consistency, Availability and Parition Tolerance - 
@@ -61,4 +62,28 @@ Source: https://www.youtube.com/watch?v=lX4CrbXMsNQ&list=PLCRMIe5FDPsd0gVs500xeO
   webhooks - give the way to revert back the update info when it is done, usually secured, and backed with polling
   websockets - constant bidireectional connection for real time bidirectional updates.
 
-9. 
+9. CDNs:
+  a. pull cdn - cdns request when client request for a new content, for heavy traffics.
+  b. push cdn - servers pushes the updated changes when happens, for smaller traffics.
+
+10. Cache write mechanisms, when to update?
+  a. cache aside - read -> cache miss -> read from db -> update cache -> return from cache.
+  b. write through - read and write to cache and cache will sync from the db synchronously.
+  c. write behind or write back - read and write to cache and cache will sync to db asynchronoudly using queu if possible.
+  d. refresh ahead - refresh the cache periodically, can also predict the data according to time.
+
+11. Communication Protocols:
+  a. http - request and response encoding protocol for transporting the data between client and server, 
+    application layer protocol, balancing, caching, encryption, compression, etc.
+  b. TCP - transport layer protocol, connection oriented with handshakes.
+  c. UDP - ttransport layer protocol, connection less protocol, out of order datagram trasfer.
+  d. RPC - request response protocol.
+  e. REST - representational state transfer mechanism for communication between client and servers.
+
+12. Powers of two table:
+  value        2 power        10 power        bytes
+  thousand      10            3                1 KB
+  million       20            6                1 MB
+  billion       30            9                1 GB
+  trillion      40            12               1 TB
+  quadrillion   50            15               1 PB
