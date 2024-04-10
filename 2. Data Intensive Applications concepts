@@ -53,7 +53,7 @@ Chapter 5: Replication
     b. multiple node writes and multiple node reads.
     c. directly update to multiple replicas or keep a cordinator (not leader) to do the updates on multiple replicas.
     d. no failovers in leaderless since there is no leader.
-    e. Quorums for read and write - usually configurable n, w, r values in the leaderless DBs.
+    e. Quorums for read and write - usually configurable n, w, r values in the leaderless DBs, usually n = 3, w = r = 2.
 
 
 
