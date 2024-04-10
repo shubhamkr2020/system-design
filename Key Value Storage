@@ -1,4 +1,18 @@
 Source: Alex Xu Book
 
+1. Functional Requirements:
+  1. put(key, value)
+  2. get(key)
+  3. separate service to store the key value pairs.
 
+2. Non Functional requirments:
+  1. low latency
+  2. high avialability
+  3. highly or automatically scalable
 
+3. Single server key value store optimisations:
+  compression
+  use disks to store - but even with these highly scalable system is not possible
+
+4. Distributed key value store
+  1. 
