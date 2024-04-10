@@ -1,0 +1,44 @@
+similar to design google doc: 
+  https://medium.com/@sureshpodeti/system-design-google-docs-93e12133a979
+
+1. Functional Requirements:
+  1. A collaborative code editor with multiple readers and editors
+  2. screen recorder
+  3. multiple languages support for running the programs
+  4. conflict resolution
+  5. 
+
+2. Non functional requirements:
+  1. very low latency, real time updates
+  2. consistency
+  3. high availability and scalability
+
+3. back of the envelope estimations:  
+  no of daily active interviews = 200K
+  no of users per session = 5
+  no of connections daily = 1M
+
+  per session memory = 10000 letters * 1 byte ~= 10KB
+  memory required per day = 1M * 10KB = 10^6 * 10 KB = 10GB
+
+  to record this we need, storage per year = 10GB * 365 = 1TB. (can be stored on one machine as well)
+
+4. Storage used:
+  1. Relational Dbs - to store the users relational data
+  2. NoSql - to store non relational data like the content of a file or comments on the file
+  3. Time series db - to store the history of the edits and record the session
+  4. blobs - to store the contents if any (not in coder pad but in google doc)
+
+5. Communication protocol used:
+  1. websocket is used instead of http since two way connection is required for real time updates
+  2. websocket from servers to each clients
+  3. 
+
+6. HLD:
+  
+
+7. deep dive in the algorithms: 
+  1. use the insert(char, position) method to record the edits, insert(), replace(), delete(), get()
+  2. store these events in the DB as event table
+  3. resolving the conflicts
+  4. check if we satisfied all the constraints in the requirements section.
