@@ -12,6 +12,7 @@ Chapter 2: Database models and query language
 1. when to use relational vs non relational model:
     a. document model is flexible and close to the data structures used in the applications, low latency
     b. relational model helps in join or if there are many/one to many/one relationships.
+    c. for heavily related data use graph db
 2. 
 
 
