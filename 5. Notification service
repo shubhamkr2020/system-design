@@ -1,0 +1,36 @@
+source: alex xu book
+
+1. types of notifications:
+  1. push notification
+  2. message notification
+  3. mail notification
+
+2. Funcitonal Requierements:
+  1. all types of notificaiton above
+  2. real time notifications with very low latency
+  3. feature to subscribe or opt out of the notification
+  4. centralised service used by multiple services in parallel
+
+3. Non Functional requirements:
+  1. very low latency
+  2. high availability
+  3. highly scalable
+  4. support for variety of platforms
+
+4. back of the envleope calculations
+  no of DA Notificaitons = 100M
+
+5. HLD:
+  1. use queue and workers in between the notificaiton servers and the clients.
+  2. store the logs for sent notifications in db backed by a cache if needed.
+  3. 
+
+6. deep dive:
+  1. notification service APIs
+  2. structure of a notification
+  3. retry mechanisms
+  4. analytics service
+  5. push pull mechanisms for notifications
+  6. rate limit on the user's end
+
+
