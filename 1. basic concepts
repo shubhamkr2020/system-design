@@ -87,3 +87,9 @@ Sources:
   billion       30            9                1 GB
   trillion      40            12               1 TB
   quadrillion   50            15               1 PB
+
+
+13. Consistent hashing:
+  1. hash ring
+  2. add, remove servers.
+  3. virtual nodes for huge range between two servers problem
