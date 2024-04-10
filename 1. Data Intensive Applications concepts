@@ -70,6 +70,7 @@ Chapter 6: Partition
     b. for hot spots, use application logics like add 2 digits infront of its id and divide it into multiple partitions
         doing so will make the read costly since there are writes on many partitions, go to every partitions to read the complete data.
     c. querying a multiple partitioned write data is called as scatter gather. they make read more expensive.
+    d. use virtual nodes to replicate the servers and remove hot spots.
 3. secondary index partitions:
     a. local indexes: secondary indexes are stored in the same partition as the primary key and value. Also called document partitioned indexes.
         only one partition needs to be queried.
