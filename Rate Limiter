@@ -1,4 +1,48 @@
 Source: Alex Xu rate limiter design
 
+1. Functinoal Requirements:
+  1. Clinet or Server side rate limiter
+  2. scale like for a big company or small scale service
+  3. a separate service or inside an application
+  4. handle the rate limmited requests properly
+
+2. Non Funcitonal requirements:
+  1. low latency
+  2. distributed systems
+  3. high fault tolerance
+  4. proper exception handling
+
+3. rough idea of the HLD, where to put the rate limitter
+
+4. Algorithms for rate limiter:
+  1. token bucket - request comes takes the token if available and tokens replenish periodically, easy to implement, memory efficient
+  2. leaking bucket - check if queue is full, otherwise push the request to the queue, memory efficient
+  3. fixed window counter - allow only fixed number of request in 1 minute intervals, memory eficient, easy to implement
+  4. sliding window log - allow only fixed number of request in the sliding window interval i.e. check the window when the request comes from there to 1 minute, 
+      takes more memory, accurate
+  5. sliding window counter - combine the above two and use some formula based counter to check with a fixed number of allowed requests, memory efficient.
+
+5. HLD and deep dive:
+  1. rate limiting rules - store separately and use workers to process them and serve to the limiter cache.
+  2. rate limiter headers:
+    1. ramining limits
+    2. limit
+    3. retry after
+  3. exception handling - throws 429 too many requests with the limit header details
+  4. drop the requests in a message queue if possible.
+  5. synchronisation issue in a distributed environment - use locking on the tokens
+  6. add monitoring and analytics if possible.
+  7. hard and soft limits
+
+SDFC:
+  https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/rate-limiter/README.md
+  https://www.youtube.com/watch?v=NvQXO7tleDI
+
+1. per machine rate limiter or centralised service
+  1. centralised can be done in api gateway (usually done for current services)
+  2. per machine can bloat the load balacer.
+2. algorithms can be per user or overall per minutes/second
+3. client side rate limiting can be there but it can be hacked
+4.
 
 
