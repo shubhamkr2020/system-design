@@ -16,3 +16,9 @@ Source: Alex Xu Book
 
 4. Distributed key value store
   1. 
+
+5. Bloom filter:
+  Algorithm to find if the data is present in the given partition (huge data) or not.
+  So, bloom filter is used to find which node has the data and then query that data.
+
+
