@@ -3,7 +3,6 @@ Source:
 2. SDFC: https://www.youtube.com/watch?v=POfW0UULcyA, https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/google-calendar/README.md
 
 1. Functional requirements:
-
   1. setup meetings
   2. view calendar for yourself and for others
   3. meeting reminders
@@ -11,7 +10,6 @@ Source:
   5. etc...
 
 2. Non functional requirements:
-
   1. high avialbility
   2. reliability/durability
   3. consistency - eventual not stronger
@@ -19,7 +17,6 @@ Source:
 
 
 3. back of the envelope estimations:
-
   no of total users - 100M
   10M users scheduling meetings per day  - DAU  = 10M;
   
@@ -32,7 +29,6 @@ Source:
 
 
 4. User Journey:
-
   1. clients go to the calendar UI, puts a request for view calendar and availability of others as well as themself
   2. check the calendar timings for meetings and puts a request for blocking the time with request parameters as other people names and timing.
   3. request is received by the calendar servers and blocks the time accordingly handling the conflicts and all.
@@ -41,7 +37,6 @@ Source:
 
 
 5. Services:
-
   1. Meeting Service
       a. getMeeting, createMeeting, updateMeeting, deleteMeeting
       b. getAvailability, getCalendar
@@ -57,7 +52,10 @@ Source:
     b. meetings - meetingId, attendees, from, to, committedAt, name, description
     c. notification - notificaitonId, userIds, meetingId, medium, timeToNotify
 
-7. checklist:
+7. HLD discussion:
+  
+
+8. checklist:
   1. CDNs for loading the calendar for users.
   2. Analytical Dbs can be used for dumps and then analysis over the previous data to send notifications and anlyse the meeting types aggragation for year or month.
   3. cron jobs/batch jobs for generating the events for sending it through event service.
