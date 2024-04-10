@@ -22,5 +22,7 @@ Source: Alex Xu Book
   2. only gives false positives but never false negatives i.e. 
     it might say that the data is present but actually its not but never say data is absent and actually it was present.
   3. So, bloom filter is used to find which node has the data and then query that data.
+  4. it used bits and hashing to do so.
+  5. 
 
 
