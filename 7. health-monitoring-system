@@ -1,4 +1,6 @@
-source: https://medium.com/@ajingnv/system-design-a-server-health-monitoring-system-9bdd0066bb9c
+similar to metric collection system
+source: 
+  https://medium.com/@ajingnv/system-design-a-server-health-monitoring-system-9bdd0066bb9c
 
 Notes:
 
@@ -18,8 +20,8 @@ https://miro.medium.com/v2/resize:fit:4800/format:webp/1*RY1jt3akoLUvlCS4i7t-8g.
 
 
 SDFC: 
-https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/health-check-endpoint/README.md, 
-https://www.youtube.com/watch?v=akSbpOZ1dFA
+metric collection - https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/metrics-service/README.md
+  video - https://www.youtube.com/watch?v=f-H4nuYoSOM
 
 
 
