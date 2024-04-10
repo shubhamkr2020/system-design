@@ -15,7 +15,7 @@ Source: Alex Xu Book
   use disks to store - but even with these highly scalable system is not possible
 
 4. Distributed key value store
-  1. 
+  1. use consistent hashing to distribute the servers and hash the clients to serve the request efficiently.
 
 5. Bloom filter:
   Algorithm to find if the data is present in the given partition (huge data) or not.
