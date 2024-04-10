@@ -71,11 +71,11 @@ Chapter 6: Partition
         doing so will make the read costly since there are writes on many partitions, go to every partitions to read the complete data.
     c. querying a multiple partitioned write data is called as scatter gather. they make read more expensive.
     d. use virtual nodes to replicate the servers and remove hot spots.
-3. secondary index partitions:
+3. secondary index partitions: https://www.linkedin.com/pulse/partitioning-schemes-databases-part-2-secondary-indexes-prateek/
     a. local indexes: secondary indexes are stored in the same partition as the primary key and value. Also called document partitioned indexes.
-        only one partition needs to be queried.
+        multiple partitions will need to be queried if point query is done for an index.
     b. global indexes: secondary indexes are partitioned separately. 
-        write on multiple partitions but read from one partition.
+        divide the global index rows on multiple partitions and read from one partition.
 
 
 
