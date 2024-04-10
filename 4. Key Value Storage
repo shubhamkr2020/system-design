@@ -18,7 +18,9 @@ Source: Alex Xu Book
   1. use consistent hashing to distribute the servers and hash the clients to serve the request efficiently.
 
 5. Bloom filter:
-  Algorithm to find if the data is present in the given partition (huge data) or not.
-  So, bloom filter is used to find which node has the data and then query that data.
+  1. probabilistic data structure to find if the data is present in the given partition (huge data) or not.
+  2. only gives false positives but never false negatives i.e. 
+    it might say that the data is present but actually its not but never say data is absent and actually it was present.
+  3. So, bloom filter is used to find which node has the data and then query that data.
 
 
