@@ -1,0 +1,37 @@
+sdfc: https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/proximity-service/README.md
+  youtube: https://www.youtube.com/watch?v=LHuhvvlFxA0
+
+1. Functional Requirements:
+  1. add new business locations
+  2. search for nearby locations or any locaitons
+  3. view business locations for the locations
+  4. update business locations and their info
+
+2. NFRs:
+  1. low latency
+  2. high availability
+  3. scalable
+
+3. estimations
+  500M locations
+  2M DAU and 10 queries per day each user
+  calculate
+
+4. Components
+  1. Users - for searching and adding locations
+  2. Location service to add/update the locations
+  3. lookup location service
+  4. Databses to store the business location info
+  5. Analytical DBs
+  6. 
+
+
+
+5. Schema of the add locations, view locations with lat-long info.
+
+6. B-trees - inefficient in multi range query
+    R- Trees - 
+    Quad-Trees - most efficient.
+        having four children for each node with the point x, y values. O(logn) for read and write both.
+
+7. 
