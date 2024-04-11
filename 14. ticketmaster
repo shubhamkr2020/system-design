@@ -1,0 +1,38 @@
+source sdfc:
+
+1. FUnctional requirements:
+  1. book tickets for cinemas or train ticket
+  2. view empty slots
+  3. book multiple seats nearby
+  4. hold the seats
+  5. serve FIFO basis
+
+2. NFRs:
+  1. avialableibility
+  2. current
+  3. security
+  4. consistency
+
+3. Estimations
+  1. 
+
+
+4. User journey:
+  --------- view seats
+  book seats
+  payments
+
+5. Components:
+  1. Users client apps
+  2. search/view service
+  3. booking service
+  4. Database to store the states and locations - ticket datastore
+  5. payment service
+  6. 
+
+6. Deep dive
+  1. read heavy or write heavy
+  2. schema of the datastore - table for seats, order table, inventory table, event table, 
+  3. schema of request response for the services
+  4. can use websocket if seats are already selected till it is booked completely.
+  5. 
