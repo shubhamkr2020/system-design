@@ -39,7 +39,7 @@ Chapter 4: Encoding and Evolution
 Chapter 5: Replication
 
 1. Single Leader -
-    a. all writes to single node and reads from multiple nodes synced to the leader.
+    a. all writes to single node and reads from one of the multiple nodes synced to the leader.
     b. synchronous and asynchronous followers, usually single sync and rest async
     c. async followers are eventually consistent
     d. failover - when leader is down, make a follower the leader and proceed forward, mostly done manually due to many issues.
