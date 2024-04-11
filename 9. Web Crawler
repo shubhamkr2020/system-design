@@ -6,3 +6,10 @@ sdfc: https://github.com/systemdesignfightclub/SDFC/tree/main/system-design/web-
   1. crawl and scrape the external web pages
   2. persist the web page in the data store
   3. 
+
+
+Components:
+  1. url store queue
+  2. url downloader
+  3. storage
+  4. scrapper
