@@ -1,0 +1,38 @@
+source: alex xu
+sdfc: https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/dropbox/README.md
+  https://www.youtube.com/watch?v=b1xqGj-SYB0
+
+
+1. Functional Requirement:
+  1. upload a file
+  2. download a  file
+  3. view a file
+  4. share a file
+  5. notifications
+
+2. Non Functional Requirements:
+  1. Consistency
+  2. Availability
+  3. Scalable
+
+3. User journey for upload download view share
+
+4. Components:
+  1. User Client apps
+  2. Upload Service
+  3. Datastore - object store and metadata dbs
+  4. download service
+  5. notification service
+  6. ddd
+
+6. APIs used 
+  1. get(with revisions), create update delete files
+  2. notify, notifyall
+  3. 
+
+7. metadata db schema for files
+
+8. deep dive:
+  1. chunk to compress, encrypt, and store in blocks
+  2. Use RDB if you need strong consistency since relational db follow ACID properties.
+  3. separate download and upload flow
