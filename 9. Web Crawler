@@ -1,0 +1,8 @@
+source: Alex Xu book
+sdfc: https://github.com/systemdesignfightclub/SDFC/tree/main/system-design/web-crawler
+  https://www.youtube.com/watch?v=OmyHt0JM7HM
+
+1. Functional Requirements:
+  1. crawl and scrape the external web pages
+  2. persist the web page in the data store
+  3. 
