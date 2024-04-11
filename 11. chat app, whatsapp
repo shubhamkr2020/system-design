@@ -1,0 +1,36 @@
+source: alex xu book
+  sdfc: https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/chat-app/README.md
+    https://www.youtube.com/watch?v=D61pXpfeYsM
+
+
+1. Functional Requirements:
+  1. sending and recieving messages
+  2. group messages (small group and large groups) - each user will have its own message queue and senders will add the messages there
+  3. online presence - no short or long polling, use heartbeat mechanism to check if the user is alive.
+  4. push notifications, etc
+
+2. Non Functional Requirements
+  1. consistent
+  2. reliable
+  3. scalable
+
+3. Components:
+  1. sender
+  2. reciever
+  3. messaging service and presence service
+  4. message store
+  5. websocket connections
+  6. message brokers in between
+  7. group or contact info DB for users
+
+4. polling types and why websocket?
+    1. will use service discovery, which server is free to have a websocket connection first.
+  
+5. types of DB used, RDB for users/groups relation but for messages use document types
+
+6. Storage:
+  1. key value store
+  2. RDB
+
+7. Schema for messages
+  message_is, channel_id, user_id, content, timestamp
