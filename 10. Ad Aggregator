@@ -1,0 +1,28 @@
+source: sdfc
+  https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/ad-click-counter/README.md
+  https://www.youtube.com/watch?v=_vK53SnrUjk
+
+
+1. FUncitonal Requirements:
+  1. capture the ad click events
+  2. query ad clicks for marketing and analysis
+  3. aggregator service for analysts
+
+2. NFRs:
+  1. low latency of the click
+  2. high availability
+  3. eventual consistency is good enough
+
+3. estimations
+  1B clicks per day
+  0.1 KB per click
+  calculate
+
+4. Components:
+  1. browsers with ads, ad placement service or CDNs
+  2. click capture service
+  3. pass the captured clicks to message brokers and process it before storing in the DB.
+  4. Aggreagation service to process 
+  5. aggregated store to store the aggregated ad data
+  6. analysis service
+
