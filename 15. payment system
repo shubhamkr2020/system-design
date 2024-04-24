@@ -1,8 +1,8 @@
 source: alex xu and sdfc.
 
 1. Functional Requirements:
-    1. pay in flow - from merchant to client
-    2. pay out flow - from merchant to seller
+    1. pay in flow - from buyer to e commerce web site account
+    2. pay out flow - from e commerce website account to seller account
 
 2. Non Funcitonal requirement:
     1. Reliability
