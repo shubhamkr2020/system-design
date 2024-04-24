@@ -1,0 +1,72 @@
+source: alex xu and sdfc.
+
+1. Functional Requirements:
+    1. pay in flow - from merchant to client
+    2. pay out flow - from merchant to seller
+
+2. Non Funcitonal requirement:
+    1. Reliability
+    2. Consistency
+    3. error and failed payments handling
+    4. scalability
+    5. reconciliation process
+
+3. Components involved:
+    1. Client - payment event
+    2. payment service
+    3. payment executor
+    4. PSP - payment service provider like stripe, paypal
+    5. card schemes - like visa, mastercard
+    6. wallet for sellers
+    7. ledger for storing logs and txn details
+    8. DBs to store information at every stage
+
+4. APIs for payment service:
+    1. payment - buyer_info, checkout_id, credit_card_info, payment_order_ids, seller_account, amount, currency, payment_order_id
+    2. store these info in correspongding tables above in each component's db
+
+5. Hosted payment page
+6. pay out flow - very similar to the pay in flow but instead of using psp to move money from buyer's to website's account, the pay out flow uses a third party pay out provider.
+        many bookkeping and logs are required here as well.
+
+7. Deep dive:
+    1. PSP integration:
+        1. check out page
+        2. payment service
+        3. psp - give a token
+        4. DB to store a token 
+            and then send the psp checkout form to the checkout page to do the complete payment with psp.
+            after the payment is complete the psp will send the status of the payment using the webhook to payment service
+            and then the final bookkeping happens in the payment service.
+
+7. Problems and non happy flows:
+    1. Reconciliation - If there is any inconsistency between the transaction from psp and the payment service ledger info the reconciliation is used:
+        1. periodically sync the ledger with a settlement file fetched from the psp and do fixes manually if there is any discrepency.
+
+    2. Handling payment processing delays:
+        1. can be due to payment verification process, risk checks and all
+        2. keep a status field in the payment requests and responses and check the status accordingly and update it by polling or webhooks.
+
+    3. synchronous and asychronous communication issues:
+        1. asynchronous communication is prefered because payments component services are heavy duty processes.
+        2. need to handle the inconsistency and failures between the system.
+
+    4. handling failed payments:
+        1. retry - retry queue and dead letter queue, exponential back offs for retryable requests, cancel requests otherwise.
+        2. deduplication and idempotency:
+            1. idempotency key sent in http header, uuid, 
+
+    5. Consistency:
+        1. needed since the data is replicated.
+        2. To maintain the consistency between the system (asynchronous) rely on the idempotency and reconciliation
+        3. Use Consitency techniques to maintain consistency between replicas of db.
+
+    6. Security
+        1. card theft
+        2. ddos
+        3. fraud
+        4. data loss
+        5. main in the middle
+
+8. Monitoring and alerts
+9. analytical DBs.
