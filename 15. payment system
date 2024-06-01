@@ -70,5 +70,7 @@ source: alex xu and sdfc.
 
 8. Monitoring and alerts
 9. analytical DBs.
+10. Idempotency handling:
+    1. use a idempotency key i.e. a UUID throughout the system and send the payments with same uuid always.
 
-10. risks, idempotency and different failures: https://www.youtube.com/watch?v=olfaBgJrUBI
+11. risks, idempotency and different failures: https://www.youtube.com/watch?v=olfaBgJrUBI
