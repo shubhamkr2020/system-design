@@ -5,12 +5,12 @@ youtube:
   1. SDFC: metric collection - https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/metrics-service/README.md
       video - https://www.youtube.com/watch?v=f-H4nuYoSOM
   2. jordan has no life: https://www.youtube.com/watch?v=_KoiMoZZ3C8
-  3.  
+  3. asli enginerring: https://www.youtube.com/watch?v=tZPTpa3JcKA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=43
 
 Notes:
 
 1. Time series dataset should be used, it helps in analysis as well, 
-      Goku - time series db: https://www.youtube.com/watch?v=tZPTpa3JcKA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=43
+      Goku - PinInterest time series db: https://www.youtube.com/watch?v=tZPTpa3JcKA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=43
       1. It stores the value in the form of key value pairs with some tags to filter the data, like OpenTSB
       2. It has aggregators like count, sum, max, min average, etc operations to do quick aggragated operations, should be stored column wise.
       3. Use in memory storage to make the db fast instead of using a disk (store historical data in disks but recent data in memory hash maps).
