@@ -54,7 +54,7 @@ source: alex xu and sdfc.
     4. handling failed payments:
         1. retry - retry queue and dead letter queue, exponential back offs for retryable requests, cancel requests otherwise.
         2. deduplication and idempotency:
-            1. idempotency key sent in http header, uuid, 
+            1. idempotency key sent in http header, uuid, common throughout the request in the complete payment system
 
     5. Consistency:
         1. needed since the data is replicated.
