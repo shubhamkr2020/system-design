@@ -18,7 +18,12 @@ Source:
   3. high fault tolerance
   4. proper exception handling
 
-3. rough idea of the HLD, where to put the rate limitter
+3. rough idea of the HLD, where to put the rate limitter:
+    1. rate limiter can be put anywhere in the complete design, decide and put it at the correct component according to the use case.
+      like in load balancer, in gateway, in services, before calling services as a central server, 
+        after services as a central servers (called by servers), etc.
+    2. can also be put at all/multiple places for better rate limiting with different algorithms at all the places.
+
 
 4. Algorithms for rate limiter:
   1. token bucket - request comes takes the token if available and tokens replenish periodically, easy to implement, memory efficient
@@ -45,7 +50,4 @@ Source:
   2. per machine can bloat the load balacer.
 2. algorithms can be per user or overall per minutes/second
 3. client side rate limiting can be there but it can be hacked
-4. rate limiter can be put anywhere in the complete design, decide and put it at the correct component according to the use case.
-    like in load balancer, in gateway, in services, before calling services as a central server, after services as a central servers (called by servers), etc.
-
-
+4. 
