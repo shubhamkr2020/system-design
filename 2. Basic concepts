@@ -79,6 +79,7 @@ Sources:
   c. UDP - ttransport layer protocol, connection less protocol, out of order datagram trasfer.
   d. RPC - request response protocol.
   e. REST - representational state transfer mechanism for communication between client and servers.
+  f. youtube explanation - https://www.youtube.com/watch?v=SzwjnoPI--M&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=11
 
 12. Powers of two table:
   value        2 power        10 power        bytes
