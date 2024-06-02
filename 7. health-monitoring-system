@@ -6,6 +6,10 @@ Notes:
 
 1. Time series dataset should be used, it helps in analysis as well, 
       time series db: https://www.youtube.com/watch?v=tZPTpa3JcKA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=43
+      1. It stores the value in the form of key value pairs with some tags to filter the data, like OpenTSB and Goku
+      2. It has aggregators like count, sum, max, min average, etc operations to do quick aggragated operations, should be stored column wise.
+      3. Use in memory storage to make the db fast instead of using a disk (store historical data in disks but recent data in memory hash maps).
+      4. Do scatter gather on the local machines (shards) and then send the response to a proxy which does the final aggregation.
 2. Time series databases - Amazon timestream, prometheus, etc.
 3. Talk about push and pull mechanisms whenever possible and select the better one with reasons.
 
