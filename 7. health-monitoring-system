@@ -4,7 +4,8 @@ source:
 
 Notes:
 
-1. Time series dataset should be used, it helps in analysis as well.
+1. Time series dataset should be used, it helps in analysis as well, 
+      time series db: https://www.youtube.com/watch?v=tZPTpa3JcKA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=43
 2. Time series databases - Amazon timestream, prometheus, etc.
 3. Talk about push and pull mechanisms whenever possible and select the better one with reasons.
 
