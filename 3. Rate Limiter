@@ -45,6 +45,6 @@ Source:
   2. per machine can bloat the load balacer.
 2. algorithms can be per user or overall per minutes/second
 3. client side rate limiting can be there but it can be hacked
-4.
+4. rate limiter can be put anywhere in the complete design, decide and put it at the correct component according to the use case.
 
 
