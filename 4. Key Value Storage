@@ -6,6 +6,7 @@ Sources:
   1. put(key, value)
   2. get(key)
   3. separate service to store the key value pairs.
+  4. It is basically a distributed db haivng key value pair read and write operations, so explain all the distributed db concepts.
 
 2. Non Functional requirments:
   1. low latency
