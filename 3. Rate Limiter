@@ -1,4 +1,10 @@
-Source: Alex Xu rate limiter design
+Source: 
+  1. Alex Xu rate limiter design
+  2. SDFC:
+      https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/rate-limiter/README.md
+      https://www.youtube.com/watch?v=NvQXO7tleDI
+  3. 
+
 
 1. Functinoal Requirements:
   1. Clinet or Server side rate limiter
@@ -33,10 +39,6 @@ Source: Alex Xu rate limiter design
   5. synchronisation issue in a distributed environment - use locking on the tokens
   6. add monitoring and analytics if possible.
   7. hard and soft limits
-
-SDFC:
-  https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/rate-limiter/README.md
-  https://www.youtube.com/watch?v=NvQXO7tleDI
 
 1. per machine rate limiter or centralised service
   1. centralised can be done in api gateway (usually done for current services)
