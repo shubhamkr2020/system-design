@@ -1,12 +1,17 @@
 similar to metric collection system
 source: 
   https://medium.com/@ajingnv/system-design-a-server-health-monitoring-system-9bdd0066bb9c
+youtube:
+  1. jordan has no life: https://www.youtube.com/watch?v=_KoiMoZZ3C8
+  2. SDFC: metric collection - https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/metrics-service/README.md
+      video - https://www.youtube.com/watch?v=f-H4nuYoSOM
+  3. 
 
 Notes:
 
 1. Time series dataset should be used, it helps in analysis as well, 
-      time series db: https://www.youtube.com/watch?v=tZPTpa3JcKA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=43
-      1. It stores the value in the form of key value pairs with some tags to filter the data, like OpenTSB and Goku
+      Goku - time series db: https://www.youtube.com/watch?v=tZPTpa3JcKA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=43
+      1. It stores the value in the form of key value pairs with some tags to filter the data, like OpenTSB
       2. It has aggregators like count, sum, max, min average, etc operations to do quick aggragated operations, should be stored column wise.
       3. Use in memory storage to make the db fast instead of using a disk (store historical data in disks but recent data in memory hash maps).
       4. Do scatter gather on the local machines (shards) and then send the response to a proxy which does the final aggregation.
@@ -22,12 +27,6 @@ Notes:
 Final Design:
 
 https://miro.medium.com/v2/resize:fit:4800/format:webp/1*RY1jt3akoLUvlCS4i7t-8g.png
-
-
-SDFC: 
-metric collection - https://github.com/systemdesignfightclub/SDFC/blob/main/system-design/metrics-service/README.md
-  video - https://www.youtube.com/watch?v=f-H4nuYoSOM
-
 
 
 Approaches:
