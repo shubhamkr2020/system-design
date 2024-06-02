@@ -1,4 +1,6 @@
-source: alex xu book
+source: 
+  alex xu book
+  asli engineering@
 
 1. types of notifications:
   1. push notification
@@ -33,6 +35,6 @@ source: alex xu book
   5. push pull mechanisms for notifications
   6. rate limit on the user's end
 
-7. youtube video with lot of other concepts and details: 
+7. youtube video with lot of other concepts and details:  
   1. https://www.youtube.com/watch?v=kIP8L-CSl2Y&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=55
   2. https://www.youtube.com/watch?v=DQwlmTvs6xA&list=PLsdq-3Z1EPT27BuTnJ_trF7BsaTpYLqst&index=41
