@@ -1,4 +1,6 @@
-Source: Alex Xu Book
+Sources: 
+  1. Alex Xu Book
+  2. Tushar roy: https://www.youtube.com/watch?v=rnZmdmlR-2M
 
 1. Functional Requirements:
   1. put(key, value)
@@ -25,4 +27,5 @@ Source: Alex Xu Book
   4. it used bits and hashing to do so.
   5. 
 
+6. Explain all the database concepts for relication and partitioning.
 
