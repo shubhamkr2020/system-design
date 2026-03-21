@@ -21,12 +21,21 @@ Chapter 1: Reliability, Scalability, Maintainability
         - SLAs (external contract) and SLOs (internal objective) for the latnecies
     f. Scaling up (verticle) and scaling out (horizontal) (shared nothing)
 4. Maintainability:
-    a. most of the cost goes in maintenance instead of development
-    b. operability: make systems running smoothly
-    c. simplicity: make systems understandable easily
-    d. evolvability: make systems modifiable easily
-    c.  
-
+    a. System will be easy to run, understand and modify.
+    b. most of the cost goes in maintenance instead of development
+    c. operability: make systems running smoothly, make it easy for operations
+    d. simplicity: make systems understandable easily, manage complexities easily
+    e. evolvability: make systems modifiable easily.
+5. Functional and Non-functional requirements
+    a. the ablove reliability, scal;ability and maintainability are non functional requirements of the system
+6. CAP theorem:
+    a. Consistency: same response for same request irrespective of request time, server, location, etc.
+    b. Availability: always a response for a request, irresepective of correctness or errors there will be some response.
+    c. Partition Tolerance: system is working even if there is a partition.
+    d. Theorem says there can only be two of the above at a time.
+    e. In general network paritions are present in the system and if we want to make the system parition tolerant 
+            i.e. system working even if there is a parition then we can sonly have either consistency or avialbility
+    f. If system is both available and consistent then in case of partition, system won't be working (can't tolerate the parition)
 
 
 Chapter 2: Database models and query language
