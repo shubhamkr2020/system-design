@@ -14,12 +14,18 @@ Chapter 1: Reliability, Scalability, Maintainability
     b. Scalable up and scalable down
     c. Even if the scale up is needed or not for the system
     d. What is a load
-    e. latency and response time: 
+    e. Latency and response time: 
         - latency is request waiting to be served and response time is actual time the user saw for the response
         - the 99th percentile latency is called the tail latency.
         - 95th 99th 99.9th percentiles for the latencies and response time
         - SLAs (external contract) and SLOs (internal objective) for the latnecies
-4. Maintan
+    f. Scaling up (verticle) and scaling out (horizontal) (shared nothing)
+4. Maintainability:
+    a. most of the cost goes in maintenance instead of development
+    b. operability: make systems running smoothly
+    c. simplicity: make systems understandable easily
+    d. evolvability: make systems modifiable easily
+    c.  
 
 
 
