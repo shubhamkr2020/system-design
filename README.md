@@ -1,1 +1,1 @@
-All system design discussions and basic concepts
+System design basic concepts and trade offs
