@@ -40,11 +40,18 @@ Chapter 1: Reliability, Scalability, Maintainability
 
 Chapter 2: Database models and query language
 
-1. when to use relational vs non relational model:
+1. As developers, we think of everything as data transfers and data processing at various layers.
+2. How to represent a data, transfer it, process it, store it and query it.
+3. SQL became famous first because it was easy to store and query but 
+    it started to become an overhead to keep a middleman layer to onvert the data into application objects, this gave rise to no-sql.
+4. no-sql data can be easy to transfer and process but may be difficult to query and store.
+5. 
+. when to use relational vs non relational model:
     a. document model is flexible and close to the data structures used in the applications, low latency
     b. relational model helps in join or if there are many/one to many/one relationships.
     c. for heavily related data use graph db
-2. 
+. which database to use:
+    https://docs.google.com/document/d/1GvnUbSoRlwJdBCAUfbVOg7hs9Di_YWkFA7VqwjA7upU/edit?usp=drive_link  
 
 
 
