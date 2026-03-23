@@ -45,7 +45,8 @@ Chapter 2: Database models and query language
 3. SQL became famous first because it was easy to store and query but 
     it started to become an overhead to keep a middleman layer to onvert the data into application objects, this gave rise to no-sql.
 4. no-sql data can be easy to transfer and process but may be difficult to query and store.
-5. 
+5. Data locality for queries: spanner db offers same locality for quick queries using interleaving (nesting) to parent table
+6. 
 . when to use relational vs non relational model:
     a. document model is flexible and close to the data structures used in the applications, low latency
     b. relational model helps in join or if there are many/one to many/one relationships.
