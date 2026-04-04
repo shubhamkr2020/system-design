@@ -59,7 +59,7 @@ Chapter 2: Database models and query language
 Chapter 3: Storage and Retrieval
 
 1. Analytical and Transactional Databases
-2. 
+2. simplest form of database is a file with set and get method to insert and query the database.
 
 
 Chapter 4: Encoding and Evolution
