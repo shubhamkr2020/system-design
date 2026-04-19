@@ -77,23 +77,30 @@ Chapter 4: Encoding and Evolution
 
 Chapter 5: Replication
 
-1. Single Leader -
+1. Replication means copying data at multiple places that are connected via network.
+2. It keeps data close to use, increase availabiillllty, increases throughput.
+3. Replicatin is easy when the data does not update, the difficulty is only when it changes over the time.
+
+4. Single Leader -
     a. all writes to single node and reads from one of the multiple nodes synced to the leader.
     b. synchronous and asynchronous followers, usually single sync and rest async
     c. async followers are eventually consistent
     d. failover - when leader is down, make a follower the leader and proceed forward, mostly done manually due to many issues.
+    e. Read your own writes: 
+        user reads its own writes to be consistent like their own profile update is done on leader so the read should also go on leader.
 
-2. Multi Leader - 
+5. Multi Leader - 
     a. writes to multiple leaders and sync to others and read from anyone.
     b. mostly not used, very complex and not that benfecial.
     c. topologies of the multi leader replications
 
-3. Leaderless - 
+6. Leaderless - 
     a. widely used these days, dynamo stlye (amazon internal db) but not dynamo db (it is single leader)
     b. multiple node writes and multiple node reads.
     c. directly update to multiple replicas or keep a cordinator (not leader) to do the updates on multiple replicas.
     d. no failovers in leaderless since there is no leader.
     e. Quorums for read and write - usually configurable n, w, r values in the leaderless DBs, usually n = 3, w = r = 2.
+        If w+r > n, the read data will be up-to-date always. For read heavy systems, keep w=n and r=1, but write will fail even if one write will fail.
 
 
 
